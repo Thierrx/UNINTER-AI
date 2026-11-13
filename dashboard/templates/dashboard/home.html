@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNINTER AI | Painel</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b1020;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #202941;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #7c9cff;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .status {
+            color: #65d99a;
+            font-size: 13px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 25px;
+        }
+
+        .welcome {
+            margin-bottom: 35px;
+        }
+
+        .welcome h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .welcome p {
+            color: #9ca9c5;
+            line-height: 1.6;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #151e33;
+            border: 1px solid #293653;
+            padding: 25px;
+            border-radius: 16px;
+        }
+
+        .card .icon {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .card h2 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #9ca9c5;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 18px;
+            color: #9bb3ff;
+            font-size: 12px;
+        }
+
+        .card-button {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            background: #5879e8;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .card-button:hover {
+            background: #4566d5;
+        }
+
+        .chat {
+            margin-top: 35px;
+            padding: 25px;
+            background: #151e33;
+            border: 1px solid #293653;
+            border-radius: 16px;
+        }
+
+        .chat h2 {
+            margin-bottom: 8px;
+        }
+
+        .chat-description {
+            color: #9ca9c5;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        #messages {
+            min-height: 180px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #0b1020;
+            border: 1px solid #293653;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .message {
+            padding: 12px 15px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .user {
+            background: #24365c;
+        }
+
+        .ai {
+            background: #192943;
+            border: 1px solid #304565;
+        }
+
+        .chat-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-form input {
+            flex: 1;
+            min-width: 0;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #293653;
+            background: #0b1020;
+            color: white;
+            outline: none;
+        }
+
+        .chat-form button {
+            padding: 0 22px;
+            border: none;
+            border-radius: 10px;
+            background: #5879e8;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .chat-form button:disabled {
+            opacity: 0.5;
+            cursor: wait;
+        }
+
+        footer {
+            text-align: center;
+            color: #65718c;
+            padding: 30px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .welcome h1 {
+                font-size: 28px;
+            }
+
+            .chat-form {
+                flex-direction: column;
+            }
+
+            .chat-form button {
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">UNINTER <span>AI</span></div>
+    <div class="status">● Sistema online</div>
+</header>
+
+<main>
+
+    <section class="welcome">
+        <h1>Seu ambiente acadêmico inteligente.</h1>
+        <p>
+            Organize seus estudos, compreenda conteúdos e potencialize
+            seu aprendizado com inteligência artificial.
+        </p>
+    </section>
+
+    <section class="cards">
+
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h2>Assistente IA</h2>
+            <p>Converse com uma inteligência artificial para tirar dúvidas e entender matérias.</p>
+            <span class="tag">GEMINI INTEGRADO</span>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h2>Minhas disciplinas</h2>
+            <p>Organize suas matérias, conteúdos e materiais de estudo.</p>
+            <span class="tag">EM DESENVOLVIMENTO</span>
+        </div>
+
+        <div class="card">
+            <div class="icon">📄</div>
+            <h2>Leitor de materiais</h2>
+            <p>Envie PDFs e documentos para resumir e compreender os conteúdos.</p>
+
+            <a href="/materiais/" class="card-button">
+                Acessar materiais
+            </a>
+
+            <br>
+
+            <span class="tag">LEITOR DE PDF</span>
+        </div>
+
+        <div class="card">
+            <div class="icon">📅</div>
+            <h2>Planejamento</h2>
+            <p>Organize sua rotina e acompanhe seu progresso acadêmico.</p>
+            <span class="tag">EM DESENVOLVIMENTO</span>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h2>Acessar UNIVIRTUS</h2>
+            <p>Abra sua plataforma acadêmica pelo navegador Brave.</p>
+
+            <button
+                type="button"
+                onclick="abrirUnivirtus()"
+                style="margin-top: 18px; padding: 12px 18px; border: none; border-radius: 8px; background: #5879e8; color: white; font-weight: bold; cursor: pointer;"
+            >
+                Abrir plataforma
+            </button>
+
+            <span class="tag">NAVEGADOR INTEGRADO</span>
+        </div>
+
+    </section>
+
+    <section class="chat">
+        <h2>🤖 Assistente UNINTER AI</h2>
+
+        <p class="chat-description">
+            Tire dúvidas, estude matérias e peça explicações ao Gemini.
+        </p>
+
+        <div id="messages" aria-live="polite">
+            <div class="message ai">
+                Olá! Sou seu assistente acadêmico.
+                Como posso ajudar nos seus estudos?
+            </div>
+        </div>
+
+        <form class="chat-form" id="chatForm">
+            {% csrf_token %}
+
+            <input
+                type="text"
+                name="pergunta"
+                id="pergunta"
+                placeholder="Digite sua pergunta..."
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit" id="sendButton">
+                Enviar
+            </button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    UNINTER AI © 2026 — Seu aprendizado, potencializado.
+</footer>
+
+<script>
+
+function abrirUnivirtus() {
+    const csrfToken = document.querySelector(
+        '[name="csrfmiddlewaretoken"]'
+    ).value;
+
+    fetch("/navegador/abrir/", {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": csrfToken
+        }
+    })
+    .then(async response => {
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.erro || "Erro ao abrir navegador.");
+        }
+
+        alert(data.mensagem);
+    })
+    .catch(error => {
+        alert(error.message);
+    });
+}
+
+const form = document.getElementById("chatForm");
+const messages = document.getElementById("messages");
+const input = document.getElementById("pergunta");
+const button = document.getElementById("sendButton");
+
+function addMessage(text, type) {
+    const message = document.createElement("div");
+
+    message.className = "message " + type;
+    message.textContent = text;
+
+    messages.appendChild(message);
+    messages.scrollTop = messages.scrollHeight;
+
+    return message;
+}
+
+form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const pergunta = input.value.trim();
+
+    if (!pergunta || button.disabled) {
+        return;
+    }
+
+    addMessage(pergunta, "user");
+
+    const formData = new FormData(form);
+    formData.set("pergunta", pergunta);
+
+    input.value = "";
+
+    button.disabled = true;
+    button.textContent = "Aguarde...";
+
+    const loading = addMessage(
+        "Consultando o Gemini...",
+        "ai"
+    );
+
+    const controller = new AbortController();
+
+    const timeout = setTimeout(function() {
+        controller.abort();
+    }, 30000);
+
+    try {
+        const csrfToken = form.querySelector(
+            '[name="csrfmiddlewaretoken"]'
+        ).value;
+
+        const response = await fetch("/ia/perguntar/", {
+            method: "POST",
+            body: formData,
+            headers: {
+                "X-CSRFToken": csrfToken
+            },
+            signal: controller.signal
+        });
+
+        const data = await response.json();
+
+        loading.remove();
+
+        if (!response.ok) {
+            throw new Error(
+                data.erro || "Erro ao consultar o Gemini."
+            );
+        }
+
+        addMessage(
+            data.resposta || "A IA não retornou uma resposta.",
+            "ai"
+        );
+
+    } catch (error) {
+        loading.remove();
+
+        if (error.name === "AbortError") {
+            addMessage(
+                "A consulta demorou demais. Tente novamente.",
+                "ai"
+            );
+        } else {
+            addMessage(
+                "Não foi possível obter uma resposta: " + error.message,
+                "ai"
+            );
+        }
+
+    } finally {
+        clearTimeout(timeout);
+
+        button.disabled = false;
+        button.textContent = "Enviar";
+
+        input.focus();
+    }
+});
+
+</script>
+
+</body>
+</html>

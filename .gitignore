@@ -1,0 +1,32 @@
+
+# Ambiente virtual
+venv/
+.venv/
+
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+
+# Sessão e perfil do navegador
+perfil_brave/
+playwright/.auth/
+
+# Banco de dados local
+db.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*.log
+
+# Arquivos temporários e materiais extraídos
+texto_aula.txt
+*.tmp
+
+# Django
+staticfiles/
+media/
+
+# IDE
+.idea/

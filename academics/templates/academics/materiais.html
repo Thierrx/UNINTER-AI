@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais | UNINTER AI</title>
+
+    <style>
+        body {
+            background: #0b1020;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: #151d32;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: #7c9cff;
+        }
+
+        input, button {
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #5879e8;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .aviso {
+            color: #aab4cc;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Materiais acadêmicos</h1>
+
+        <p>Adicione PDFs das suas disciplinas para o UNINTER AI consultar.</p>
+
+        <form>
+            {% csrf_token %}
+
+            <input type="file" accept=".pdf" required>
+
+            <br>
+
+            <button type="submit">
+                Enviar material
+            </button>
+        </form>
+
+        <p class="aviso">
+            Os materiais serão processados pela inteligência artificial.
+        </p>
+
+        <a href="/" style="color: #7c9cff;">
+            Voltar ao painel
+        </a>
+    </div>
+</body>
+</html>
